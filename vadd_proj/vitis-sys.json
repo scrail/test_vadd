@@ -1,0 +1,56 @@
+{
+  "modelVersion": "1.0",
+  "projectName": "vadd_proj",
+  "platform": "xilinx_u50_gen3x16_xdma_5_202210_1",
+  "externalComponentRefs": [
+    "vadd",
+    "vadd_host"
+  ],
+  "components": [
+    {
+      "name": "hw_link",
+      "type": "HW_LINKER",
+      "configuration": {
+        "componentType": "HW_LINKER",
+        "containers": [
+          {
+            "name": "binary_container_1",
+            "kernels": {},
+            "userXoKernels": {},
+            "aieComponents": [],
+            "userAieLibadfList": [],
+            "userVssList": [],
+            "cfgFiles": [
+              "hw_link/binary_container_1-link.cfg"
+            ]
+          }
+        ],
+        "vppLinkerConfigurations": [
+          {
+            "configId": "hw_link.default",
+            "options": [],
+            "containerOptions": {},
+            "buildDatafiles": []
+          }
+        ]
+      },
+      "useSysrootToolchain": false
+    }
+  ],
+  "buildConfigurations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "supportedTargets": [
+        "HW_EMU",
+        "HW"
+      ],
+      "componentConfigMap": {
+        "hw_link": "hw_link.default"
+      }
+    }
+  ],
+  "activeBuildConfigId": "default",
+  "isDirty": true,
+  "applicationFlow": "DATA_CENTER"
+}

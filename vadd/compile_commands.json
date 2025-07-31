@@ -1,0 +1,15 @@
+[
+  {
+    "directory": "/home/scrail/vadd/vadd",
+    "arguments": [
+      "/tools/Xilinx/2025.1/Vitis/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/2025.1/Vitis/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/2025.1/Vitis/common/technology/autopilot",
+      "-fhlstoplevel=vadd",
+      "-c",
+      "/home/scrail/changsha/vadd/vadd.cpp"
+    ],
+    "file": "/home/scrail/changsha/vadd/vadd.cpp"
+  }
+]
