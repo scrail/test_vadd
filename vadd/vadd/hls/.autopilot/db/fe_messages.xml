@@ -1,0 +1,60 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=vadd" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:10:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in1 offset=slave bundle=gmem0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in2 offset=slave bundle=gmem1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out offset=slave bundle=gmem0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=size" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="vadd" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:40:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="load_data" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:48:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="compute_add" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="vadd.cpp:59:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="store_data" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="vadd.cpp:60:19" msg_body="Loop 'VITIS_LOOP_60_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_60_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="vadd.cpp:49:19" msg_body="Loop 'VITIS_LOOP_49_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_49_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="vadd.cpp:41:19" msg_body="Loop 'VITIS_LOOP_41_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_41_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="vadd.cpp:5:0" msg_body="Skipping array undecay on variable length array 'in1'.">
+        <args ArrayName="in1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="vadd.cpp:5:0" msg_body="Skipping array undecay on variable length array 'in2'.">
+        <args ArrayName="in2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-464" msg_severity="WARNING" msg_loc="vadd.cpp:5:0" msg_body="Skipping array undecay on variable length array 'out'.">
+        <args ArrayName="out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-187" msg_severity="WARNING" msg_loc="vadd.cpp:60:19" msg_body="Cannot unroll loop 'VITIS_LOOP_60_1' (vadd.cpp:60:19) in function 'store_data' as it has a variable trip count">
+        <args LoopLoc="vadd.cpp:60:19" LoopName="VITIS_LOOP_60_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-187" msg_severity="WARNING" msg_loc="vadd.cpp:49:19" msg_body="Cannot unroll loop 'VITIS_LOOP_49_1' (vadd.cpp:49:19) in function 'compute_add' as it has a variable trip count">
+        <args LoopLoc="vadd.cpp:49:19" LoopName="VITIS_LOOP_49_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-187" msg_severity="WARNING" msg_loc="vadd.cpp:41:19" msg_body="Cannot unroll loop 'VITIS_LOOP_41_1' (vadd.cpp:41:19) in function 'load_data' as it has a variable trip count">
+        <args LoopLoc="vadd.cpp:41:19" LoopName="VITIS_LOOP_41_1"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

@@ -1,0 +1,31 @@
+---
+MainSourceFile:  /home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_41_1:  '
+    FileOffset:      41
+    FilePath:        vadd.cpp
+    Replacements:    
+      - FilePath:        /home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp
+        Offset:          14564
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_41_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_49_1:  '
+    FileOffset:      49
+    FilePath:        vadd.cpp
+    Replacements:    
+      - FilePath:        /home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp
+        Offset:          14786
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_49_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_60_1:  '
+    FileOffset:      60
+    FilePath:        vadd.cpp
+    Replacements:    
+      - FilePath:        /home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp
+        Offset:          15061
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_60_1: '
+...

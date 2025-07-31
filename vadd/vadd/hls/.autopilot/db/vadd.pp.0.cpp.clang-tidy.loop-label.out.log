@@ -1,0 +1,15 @@
+/home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp:348:2: warning: Added loop label VITIS_LOOP_41_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < size; i++) {
+ ^~~
+ VITIS_LOOP_41_1: 
+/home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp:348:2: note: FIX-IT applied suggested code changes
+/home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp:356:2: warning: Added loop label VITIS_LOOP_49_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < size; i++) {
+ ^~~
+ VITIS_LOOP_49_1: 
+/home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp:356:2: note: FIX-IT applied suggested code changes
+/home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp:367:2: warning: Added loop label VITIS_LOOP_60_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < size; i++) {
+ ^~~
+ VITIS_LOOP_60_1: 
+/home/scrail/changsha/vadd/vadd/hls/.autopilot/db/vadd.pp.0.cpp:367:2: note: FIX-IT applied suggested code changes

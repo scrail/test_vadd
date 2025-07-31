@@ -21,3 +21,17 @@ proj = proj.add_component(name="vadd", container_name="binary_container_1")
 
 proj = proj.add_component(name="vadd_host")
 
+client.sync_git_example_repo(name="vitis_libraries")
+
+comp = client.get_component(name="vadd")
+comp.run(operation="C_SIMULATION")
+
+comp = client.get_component(name="vadd_host")
+comp.build()
+
+comp.build()
+
+comp.build()
+
+proj = proj.add_precompiled_kernel(xo_file_path="/home/scrail/vadd/vadd/vadd/vadd.xo", containers)
+

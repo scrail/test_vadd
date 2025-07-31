@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Wed May 21 22:58:25 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Wed Jul 30 20:30:06 2025
+# Process ID         : 31483
+# Current directory  : /home/scrail/changsha/vadd/vadd/hls/impl/ip
+# Command line       : vivado -notrace -mode batch -source run_ippack.tcl
+# Log file           : /home/scrail/changsha/vadd/vadd/hls/impl/ip/vivado.log
+# Journal file       : /home/scrail/changsha/vadd/vadd/hls/impl/ip/vivado.jou
+# Running On         : scrail
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : AMD Ryzen 7 9700X 8-Core Processor
+# CPU Frequency      : 3792.879 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 8
+# Host memory        : 8277 MB
+# Swap memory        : 3905 MB
+# Total Virtual      : 12183 MB
+# Available Virtual  : 5896 MB
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+INFO: calling package_hls_ip ip_types=vitis sysgen json_file=/home/scrail/changsha/vadd/vadd/hls/hls_data.json outdir=/home/scrail/changsha/vadd/vadd/hls/impl/ip srcdir=/home/scrail/changsha/vadd/vadd/hls ippack_options_dict= ippack_options_dict=
+INFO: Copied 1 ipmisc file(s) to /home/scrail/changsha/vadd/vadd/hls/impl/ip/misc
+INFO: Copied 16 verilog file(s) to /home/scrail/changsha/vadd/vadd/hls/impl/ip/hdl/verilog
+INFO: Copied 13 vhdl file(s) to /home/scrail/changsha/vadd/vadd/hls/impl/ip/hdl/vhdl
+INFO: Copied 10 swdriver file(s) to /home/scrail/changsha/vadd/vadd/hls/impl/ip/drivers
+WARNING: [Common 17-1496] Vivado tclapp support version doesn't have install/uninstall hooks. Please update support using ::tclapp::update_support command.
+WARNING: [Common 17-1496] Vivado tclapp support version doesn't have install/uninstall hooks. Please update support using ::tclapp::update_support command.
+WARNING: [Common 17-1496] Vivado tclapp support version doesn't have install/uninstall hooks. Please update support using ::tclapp::update_support command.
+WARNING: [Common 17-1496] Vivado tclapp support version doesn't have install/uninstall hooks. Please update support using ::tclapp::update_support command.
+WARNING: [Common 17-1496] Vivado tclapp support version doesn't have install/uninstall hooks. Please update support using ::tclapp::update_support command.
+WARNING: [Common 17-1496] Vivado tclapp support version doesn't have install/uninstall hooks. Please update support using ::tclapp::update_support command.
+INFO: Import ports from HDL: /home/scrail/changsha/vadd/vadd/hls/impl/ip/hdl/vhdl/vadd.vhd (vadd)
+INFO: Add axi4lite interface s_axi_control
+INFO: Add clock interface ap_clk
+INFO: Add reset interface ap_rst_n
+INFO: Add interrupt interface interrupt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/2025.1/Vivado/data/ip'.
+INFO: Add axi4full interface m_axi_gmem0
+INFO: Add axi4full interface m_axi_gmem1
+INFO: Calling post_process_vitis to specialize IP
+INFO: Calling post_process_sysgen to specialize IP
+Generating sysgen info xml from json file
+INFO: Created IP /home/scrail/changsha/vadd/vadd/hls/impl/ip/component.xml
+Generating XO file: vadd.xo in directory /home/scrail/changsha/vadd/vadd/hls/..
+Running: package_xo -xo_path /home/scrail/changsha/vadd/vadd/hls/../vadd.xo -kernel_xml /home/scrail/changsha/vadd/vadd/hls/kernel.xml -kernel_name vadd -ip_directory /home/scrail/changsha/vadd/vadd/hls/impl/ip -kernel_files {/home/scrail/changsha/vadd/vadd/hls/../../vadd.cpp /home/scrail/changsha/vadd/vadd/hls/../../vadd.h} -hls_directory /home/scrail/changsha/vadd/vadd/hls/impl/misc/hls_files -kernel_json /home/scrail/changsha/vadd/vadd/hls/hls_data.json
+INFO: Created IP archive /home/scrail/changsha/vadd/vadd/hls/impl/ip/xilinx_com_hls_vadd_1_0.zip
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 30 20:30:09 2025...

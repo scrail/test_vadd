@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "/home/scrail/changsha/vadd/vadd/vadd.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jul 30 20:30:03 2025",
+ "timestampMillis": "1753878603910",
+ "buildStep": {
+  "cmdId": "5989a936-5af3-4a8b-b0af-5c1b58d9677f",
+  "name": "vitis-run",
+  "logFile": "/home/scrail/changsha/vadd/vadd/logs/vadd.steps.log",
+  "commandLine": "/tools/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /home/scrail/changsha/vadd/hls_config.cfg --work_dir vadd ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/home/scrail/changsha/vadd/hls_config.cfg",
+   "--work_dir",
+   "vadd"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/scrail/changsha/vadd"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 30 20:30:03 2025",
+ "timestampMillis": "1753878603910",
+ "status": {
+  "cmdId": "5989a936-5af3-4a8b-b0af-5c1b58d9677f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jul 30 20:30:05 2025",
+ "timestampMillis": "1753878605894",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_XO",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "vadd",
+     "file": "/home/scrail/changsha/vadd/vadd/vadd.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/scrail/changsha/vadd/vadd.cpp",
+     "/home/scrail/changsha/vadd/vadd.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jul 30 20:30:05 2025",
+ "timestampMillis": "1753878605895",
+ "buildStep": {
+  "cmdId": "c3a50110-a681-43ee-83db-50da6967996b",
+  "name": "",
+  "logFile": "/home/scrail/changsha/vadd/vadd/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/scrail/changsha/vadd"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 30 20:30:05 2025",
+ "timestampMillis": "1753878605895",
+ "status": {
+  "cmdId": "c3a50110-a681-43ee-83db-50da6967996b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 30 20:30:09 2025",
+ "timestampMillis": "1753878609866",
+ "status": {
+  "cmdId": "c3a50110-a681-43ee-83db-50da6967996b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jul 30 20:30:09 2025",
+ "timestampMillis": "1753878609966",
+ "status": {
+  "cmdId": "5989a936-5af3-4a8b-b0af-5c1b58d9677f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 30 20:30:09 2025",
+ "timestampMillis": "1753878609967",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jul 30 20:30:09 2025",
+ "timestampMillis": "1753878609967",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

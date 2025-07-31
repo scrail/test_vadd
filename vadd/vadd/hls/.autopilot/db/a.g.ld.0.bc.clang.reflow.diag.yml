@@ -1,0 +1,696 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 30, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'load_data(int*, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 32, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'compute_add(hls::stream<int, 0>&, hls::stream<int, 0>&, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 47, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 33, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'store_data(hls::stream<int, 0>&, int*, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 58, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 49, Column: 19 }
+Function:        _Z11compute_addRN3hls6streamIiLi0EEES2_S2_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_49_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 30, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'load_data(int*, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 32, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'compute_add(hls::stream<int, 0>&, hls::stream<int, 0>&, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 47, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 33, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'store_data(hls::stream<int, 0>&, int*, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 58, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_vadd_ir
+Args:            
+  - Callee:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_vadd_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+Function:        vadd
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       in1
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+Function:        vadd
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       in2
+  - String:          '''.'
+...
+--- !Failure
+Pass:            reflow-array-undecay
+Name:            WarnOnUnsupportedVLAUnDecay
+DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+Function:        vadd
+Args:            
+  - String:          'Skipping array undecay on variable length array '''
+  - ArrayName:       out
+  - String:          '''.'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        outseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:60:19'
+  - String:          ' '
+  - Function:        'store_data(hls::stream<int, 0>&, int*, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 58, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: vadd.cpp, Line: 61, Column: 16 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.store.5
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0,gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ' '
+  - Function:        'load_data(int*, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: vadd.cpp, Line: 42, Column: 20 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.4
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0,gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ' '
+  - Function:        'load_data(int*, hls::stream<int, 0>&, int) (.9)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: vadd.cpp, Line: 42, Column: 20 }
+  - OrigDirection:   read
+  - OrigID:          for.inc.load.4
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          outseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:60:19'
+  - String:          ' '
+  - Function:        'store_data(hls::stream<int, 0>&, int*, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 58, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0,gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ' '
+  - Function:        'load_data(int*, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            BadAccessLen
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9
+Args:            
+  - String:          Sequential access length is not divisible by 2
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+  - OrigDirection:   read
+  - OrigID:          inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0,gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ' '
+  - Function:        'load_data(int*, hls::stream<int, 0>&, int) (.9)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 49, Column: 19 }
+Function:        _Z11compute_addRN3hls6streamIiLi0EEES2_S2_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_49_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 49, Column: 19 }
+Function:        _Z11compute_addRN3hls6streamIiLi0EEES2_S2_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_49_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ' '
+  - Function:        'load_data(int*, hls::stream<int, 0>&, int) (.9.1)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          '''('
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ' '
+  - Function:        'load_data(int*, hls::stream<int, 0>&, int) (.1)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          '''('
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ' '
+  - LoopLoc:         'vadd.cpp:60:19'
+  - String:          ' '
+  - Function:        'store_data(hls::stream<int, 0>&, int*, int) (.1)'
+    DebugLoc:        { File: vadd.cpp, Line: 58, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii.1
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '32'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          '''('
+  - LoopLoc:         'vadd.cpp:60:19'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii.1
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 49, Column: 19 }
+Function:        _Z11compute_addRN3hls6streamIiLi0EEES2_S2_i
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_49_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.1
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9.1
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: vadd.cpp, Line: 60, Column: 19 }
+Function:        _Z10store_dataRN3hls6streamIiLi0EEEPii.1
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_60_1
+  - String:          ''' ('
+  - LoopLoc:         'vadd.cpp:60:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          store_data
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: vadd.cpp, Line: 49, Column: 19 }
+Function:        _Z11compute_addRN3hls6streamIiLi0EEES2_S2_i
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_49_1
+  - String:          ''' ('
+  - LoopLoc:         'vadd.cpp:49:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          compute_add
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.1
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' ('
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          load_data
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFailFullyUnroll
+DebugLoc:        { File: vadd.cpp, Line: 41, Column: 19 }
+Function:        _Z9load_dataPiRN3hls6streamIiLi0EEEi.9.1
+Args:            
+  - String:          'Cannot unroll loop '''
+  - LoopName:        VITIS_LOOP_41_1
+  - String:          ''' ('
+  - LoopLoc:         'vadd.cpp:41:19'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          load_data
+  - String:          ''' as it has a variable trip count'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 30, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'load_data(int*, hls::stream<int, 0>&, int) (.9.1)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 31, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'load_data(int*, hls::stream<int, 0>&, int) (.1)'
+    DebugLoc:        { File: vadd.cpp, Line: 38, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 32, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'compute_add(hls::stream<int, 0>&, hls::stream<int, 0>&, hls::stream<int, 0>&, int)'
+    DebugLoc:        { File: vadd.cpp, Line: 47, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: vadd.cpp, Line: 33, Column: 5 }
+Function:        vadd
+Args:            
+  - Callee:          'store_data(hls::stream<int, 0>&, int*, int) (.1)'
+    DebugLoc:        { File: vadd.cpp, Line: 58, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          vadd
+    DebugLoc:        { File: vadd.cpp, Line: 5, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

@@ -1,0 +1,21 @@
+In file included from /home/scrail/changsha/vadd/vadd.cpp:1:
+In file included from /home/scrail/changsha/vadd/vadd.h:4:
+In file included from /tools/Xilinx/2025.1/Vitis/common/technology/autopilot/hls_stream.h:12:
+/tools/Xilinx/2025.1/Vitis/common/technology/autopilot/hls_stream_39.h:127:9: error: use of undeclared identifier '__fpga_fifo_push'
+        __fpga_fifo_push(&V, &din);
+        ^
+/home/scrail/changsha/vadd/vadd.cpp:42:20: note: in instantiation of member function 'hls::stream<int, 0>::write' requested here
+        out_stream.write(in[i]); // 从全局内存读取数据并写入 HLS 流
+                   ^
+In file included from /home/scrail/changsha/vadd/vadd.cpp:1:
+In file included from /home/scrail/changsha/vadd/vadd.h:4:
+In file included from /tools/Xilinx/2025.1/Vitis/common/technology/autopilot/hls_stream.h:12:
+/tools/Xilinx/2025.1/Vitis/common/technology/autopilot/hls_stream_39.h:98:9: error: use of undeclared identifier '__fpga_fifo_pop'
+        __fpga_fifo_pop(&V, &dout);
+        ^
+/tools/Xilinx/2025.1/Vitis/common/technology/autopilot/hls_stream_39.h:109:9: note: in instantiation of member function 'hls::stream<int, 0>::read' requested here
+        read(tmp);
+        ^
+/home/scrail/changsha/vadd/vadd.cpp:50:31: note: in instantiation of member function 'hls::stream<int, 0>::read' requested here
+        int val1 = in1_stream.read(); // 从输入流读取数据
+                              ^

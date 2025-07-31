@@ -1,0 +1,7 @@
+[
+  {
+    "command": "/bin/g++ -DVITIS_MAJOR_VERSION\u003dVitis -DVITIS_MINOR_VERSION\u003dVitis -DVITIS_VERSION\u003dVitis -D__USE_XOPEN2K8 -I/tools/Xilinx/2025.1/Vitis/include -I/opt/xilinx/xrt/include -g -Wall -Wextra -O0 -g3 -std\u003dc++14 -o CMakeFiles/vadd_host.dir/host.cpp.o -c /home/scrail/vadd/vadd_host/host.cpp",
+    "file": "/home/scrail/vadd/vadd_host/host.cpp",
+    "directory": "/home/scrail/vadd/vadd_host"
+  }
+]

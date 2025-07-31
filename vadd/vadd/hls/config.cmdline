@@ -1,0 +1,3 @@
+relativeroot=/home/scrail/changsha/vadd
+original_argv=--mode hls --package --config /home/scrail/changsha/vadd/hls_config.cfg --work_dir vadd 
+

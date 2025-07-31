@@ -16,7 +16,9 @@
           {
             "name": "binary_container_1",
             "kernels": {},
-            "userXoKernels": {},
+            "userXoKernels": {
+              "vadd": "/home/scrail/vadd/vadd/vadd/vadd.xo"
+            },
             "aieComponents": [],
             "userAieLibadfList": [],
             "userVssList": [],
